@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>timer</title>
+	<script language="javascript">
+	var timerNum;
+	function start() {
+		timerNum = 600;
+		function timer() {
+			document.getElementById("textTimer").innerHTML=Math.floor(timerNum/60)+":"+timerNum--%60;
+			document.getElementById("textTimer").style.color="#bfbfbf";
+			var tid = setTimeout(function() {
+				timer();s
+			}, 1000);
+			if (timerNum == -1) {
+				clearTimeout(tid);
+				document.getElementById("textTimer").style.color="red";
+			}
+		}
+		timer();
+	}
+	start();
+	function stop(){
+		timerNum = 0;
+	}
+	</script>
+</head>
+<body>
+<div id="textTimer" style="font-size:40pt; color:#bfbfbf;">10:00</div>
+<input type="button" value="start" onclick="start();" />
+<input type="button" value="stop" onclick="stop();" />
+</body>
+</html>

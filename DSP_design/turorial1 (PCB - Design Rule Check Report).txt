@@ -1,0 +1,75 @@
+Design Rule Check Report
+------------------------
+
+Report File:        C:\Users\tomohiro\Desktop\DSP_design\turorial1 (PCB - Design Rule Check Report).txt
+Report Written:     Thursday, July 09, 2015
+Design Path:        C:\Users\tomohiro\Desktop\DSP_design\turorial1.pcb
+Design Title:       
+Created:            2015/07/09 20:35:19
+Last Saved:         2015/07/09 20:58:59
+Editing Time:       23 min
+Units:              mil (precision 0)
+
+
+Results
+=======
+
+Drill Hole to Drill Hole Error (D-D) between (10150 10300) and (10145 10300) on Layer "[All]".
+Pad to Via error (P-V) at (10145 10300) on layer "[All]".
+    Via in pad Component Pad R1.2 (Net 'N0001').
+Via to Silkscreen error (V-S) at (10500 9926) on layer "Top Silkscreen".
+    Silkscreen shape overlaps via.
+Via to Silkscreen error (V-S) at (10900 10085) on layer "Top Silkscreen".
+    Silkscreen shape overlaps via.
+Via to Silkscreen error (V-S) at (10900 9935) on layer "Top Silkscreen".
+    Silkscreen shape overlaps via.
+Gap in Net "+15V" between (10100,9250) and (9300,9584) 
+    +15V.
+
+Number of errors found : 6
+
+
+Settings
+========
+
+
+Spacings
+
+=========
+
+Tracks        Yes
+Pads and Vias Yes
+Shapes        Yes
+Text          Yes
+Board         Yes
+Drills        Yes
+Components    Yes
+
+
+Manufacturing
+
+==============
+
+Drill Breakout                  Yes
+Drill Backoff                   Yes
+Silkscreen Overlap              Yes
+Copper Text In Board            Yes
+Min Track Width                 Yes
+Min Annular Ring                Yes
+Min Paste Size                  Yes
+Vias In Pads                    Yes
+Unplated Vias                   Yes
+Unplated Pads With Inner Tracks Yes
+
+
+Nets
+
+=====
+
+Net Completion               Yes
+Dangling Tracks              Yes
+Net Track Length Differences No
+
+
+
+End Of Report.

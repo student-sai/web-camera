@@ -1,0 +1,18 @@
+@font-face {
+	font-family: 'cubos';
+	src: local('cubos.ttf');
+}
+body{
+	background-color: gainsboro;
+	font-family: cubos;
+	font-size: 40px;
+	color: orangered;
+}
+img{
+	height: 480px;
+	width: 640px;
+	border: 2px blue solid;
+}
+section{
+	float: left;
+}

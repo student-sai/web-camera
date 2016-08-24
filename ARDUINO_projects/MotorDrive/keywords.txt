@@ -1,0 +1,6 @@
+#Methods and Functions(KEYWORD2)
+	
+setRightPin	KEYWORD1
+setLeftPin	KEYWORD1
+setDirection	KEYWORD2
+		

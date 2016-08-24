@@ -1,0 +1,86 @@
+  1 <!DOCTYPE html>
+  2 <html lang = "ja">
+  3 <head>
+  4   <meta charset="UTF-8">
+  5   <link rel="stylesheet" href="index.css">
+  6     <script src="countDown.js"></script>
+  7     <title>WebIOPi | Light Control</title>
+  8     <script src="/webiopi.js"></script>
+  9
+ 10     <script>
+ 11       webiopi().ready(function() {
+ 12         $("button").MouseUp(function() {
+ 13           alert("hello world");
+ 14         });
+ 15         // Refresh GPIO buttons
+ 16         // pass true to refresh repeatedly of false to refresh once
+ 17         webiopi().refreshGPIO(true);
+ 18       });
+ 19       function sendToArduino(direction) {
+ 20         var bkcolor;
+ 21         //change background color of button
+ 22         if ( direction == 0){
+ 23           bkcolor = "silver";
+ 24         }
+ 25         else {
+ 26           bkcolor = "gainsboro";
+ 27         }
+ 28         event.srcElement.style.backgroundColor = bkcolor;
+ 29
+ 30         webiopi().callMacro('motorControl',direction);
+ 31       }
+ 32       function callServoFunction() {
+ 33         yaw_angle = document.getElementById("yaw_servo").value;
+ 34         //pitch_angle = document.getElementById("pitch_servo").value;
+ 35         //document.getElementById('id_range_val1').innerHTML= angle;
+ 36         webiopi().callMacro('servoControlYaw', yaw_angle);
+ 37         //webiopi().callMacro('servoControlPit', pitch_angle);
+ 38       }
+ 39       function callServFunctionPitch() {
+ 40         pitch_angle = document.getElementById("pitch_servo").value;
+ 41         webiopi().callMacro('servoControlPit', pitch_angle);
+ 42       }
+ 43   </script>
+ 44 </head>
+ 45 <body>
+ 46   <header>Web Camera Robot</header>
+ 47   <div class="cockpit">
+ 48     <nav class="left_column"></nav>
+ 49     <section class="main_column">
+ 50       <img src="http://192.168.11.2:8081">
+ 51       <div class="controls">
+ 52         <div class="controls_motor">
+ 53           <button id="forward"class="button_forward" type="button"
+ 54             onMouseUp="sendToArduino(0);"
+ 55             onMouseOut="sendToArduino(0);"
+ 56             onMouseDown="sendToArduino(1);"
+ 57             >FORWARD</button>
+ 58             <div class="button_side">
+ 59               <button class="button_forward" type="button"
+ 60                 onMouseUp="sendToArduino(0);"
+ 61                 onMouseOut="sendToArduino(0);"
+ 62                 onMouseDown="sendToArduino(2);"
+ 63                 >TURN LEFT</button>
+ 64               <button class="button_forward"type="button"
+ 65                 onMouseUp="sendToArduino(0);"
+ 66                 onMouseOut="sendToArduino(0);"
+ 67                 onMouseDown="sendToArduino(3);"
+ 68                 >TURN RIGHT</button>
+ 69             </div>
+ 70           <button class="button_forward" type="button"
+ 71                 onMouseUp="sendToArduino(0);"
+ 72                 onMouseOut="sendToArduino(0);"
+ 73                 onMouseDown="sendToArduino(4);"
+ 74                 >BACKWARD</button>
+ 75       </div>
+ 76         <div class="controls_servo" id="controls">
+ 77           <input id="pitch_servo" type="range" min="0" max="180" step="1"
+ 78             onInput = "callServoFunctionPitch();"/><br/>
+ 79           <input id="yaw_servo" type="range" min="0" max="180"step="1"
+ 80             onInput = "callServoFunction();"/>
+ 81           <span id="id_range_val1">90</span>
+ 82           <div id="slider" style="widht:150px;"></div>
+ 83         </div>
+ 84       </div>
+ 85     </section>
+                                                              85,14         89%
